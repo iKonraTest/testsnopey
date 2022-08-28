@@ -1,0 +1,337 @@
+H:2,block:6,blockSize:1000,chunk:c03,created:182e2979a0b,format:1,version:c03,fletcher:1b1fae35
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                H:2,block:6,blockSize:1000,chunk:c03,created:182e2979a0b,format:1,version:c03,fletcher:1b1fae35
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                chunk:c01,block:2,len:4,liveMax:3780,livePages:e,map:1a,max:3ab0,pages:10,root:30040000cc783,time:d0e0f3,version:c01                                        
+  ÐL 1234567	
+
+ ! &XSET CREATE_BUILD 199" "
+2CREATE USER IF NOT EXISTS "" SALT '' HASH '' ADMIN#  
+ñCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_E67993B4_3A49_4291_999E_1D5978ABAA32") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_E67993B4_3A49_4291_999E_1D5978ABAA32",
+    "UUID" VARCHAR(36) NOT NULL,
+    "PERMISSION" VARCHAR(200) NOT NULL,
+    "VALUE" BOOL NOT NULL,
+    "SERVER" VARCHAR(36) NOT NULL,
+    "WORLD" VARCHAR(64) NOT NULL,
+    "EXPIRY" BIGINT NOT NULL,
+    "CONTEXTS" VARCHAR(200) NOT NULL
+)$ #
+mCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_E67993B4_3A49_4291_999E_1D5978ABAA32" START WITH 3 BELONGS_TO_TABLE% !
+ZCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("ID")& %
+‰ALTER TABLE "PUBLIC"."LUCKPERMS_USER_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_3" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_3"' !
+PCREATE INDEX "PUBLIC"."INDEX_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("UUID")(  
+òCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D",
+    "NAME" VARCHAR(36) NOT NULL,
+    "PERMISSION" VARCHAR(200) NOT NULL,
+    "VALUE" BOOL NOT NULL,
+    "SERVER" VARCHAR(36) NOT NULL,
+    "WORLD" VARCHAR(64) NOT NULL,
+    "EXPIRY" BIGINT NOT NULL,
+    "CONTEXTS" VARCHAR(200) NOT NULL
+)) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D" START WITH 42 BELONGS_TO_TABLE* !
+[CREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("ID")+ %
+ŠALTER TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_5", !
+QCREATE INDEX "PUBLIC"."INDEX_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("NAME")-  
+¢CREATE CACHED TABLE "PUBLIC"."LUCKPERMS_PLAYERS"(
+    "UUID" VARCHAR(36) NOT NULL,
+    "USERNAME" VARCHAR(16) NOT NULL,
+    "PRIMARY_GROUP" VARCHAR(36) NOT NULL
+). !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("UUID")/ %
+‚ALTER TABLE "PUBLIC"."LUCKPERMS_PLAYERS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("UUID") INDEX "PUBLIC"."PRIMARY_KEY_F" !
+KCREATE INDEX "PUBLIC"."INDEX_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("USERNAME")  
+RCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUPS"(
+    "NAME" VARCHAR(36) NOT NULL
+) !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F9" ON "PUBLIC"."LUCKPERMS_GROUPS"("NAME") %
+ƒALTER TABLE "PUBLIC"."LUCKPERMS_GROUPS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F9" PRIMARY KEY("NAME") INDEX "PUBLIC"."PRIMARY_KEY_F9"  
+õCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_ACTIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919",
+    "TIME" BIGINT NOT NULL,
+    "ACTOR_UUID" VARCHAR(36) NOT NULL,
+    "ACTOR_NAME" VARCHAR(100) NOT NULL,
+    "TYPE" CHAR(1) NOT NULL,
+    "ACTED_UUID" VARCHAR(36) NOT NULL,
+    "ACTED_NAME" VARCHAR(36) NOT NULL,
+    "ACTION" VARCHAR(300) NOT NULL
+) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919" START WITH 50 BELONGS_TO_TABLE !
+QCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_D" ON "PUBLIC"."LUCKPERMS_ACTIONS"("ID") %
+€ALTER TABLE "PUBLIC"."LUCKPERMS_ACTIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_D" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_D"  
+nCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_TRACKS"(
+    "NAME" VARCHAR(36) NOT NULL,
+    "GROUPS" TEXT NOT NULL
+) !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F4" ON "PUBLIC"."LUCKPERMS_TRACKS"("NAME") %
+ƒALTER TABLE "PUBLIC"."LUCKPERMS_TRACKS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F4" PRIMARY KEY("NAME") INDEX "PUBLIC"."PRIMARY_KEY_F4"   ’þ 12 !
+$a5036334-176e-4cbc-a826-df006bab9273Ogroup.ownerAJglobalJglobal0F{}"
+$a5036334-176e-4cbc-a826-df006bab9273E*AJglobalJglobal0F{}   ^  
+$a5036334-176e-4cbc-a826-df006bab92731
+$a5036334-176e-4cbc-a826-df006bab92732     ŽÒ	% 567	
+
+ !"#$%&'() %KdefaultYprefix.0.&8[&3&lBL&8]AJglobalJglobal0F{}&Iowner\prefix.0.&8[&4&lOwner&8]AJglobalJglobal0F{}'KdefaultWezcolors.color.aquaAJglobalJglobal0F{}(KdefaultWezcolors.color.pinkAJglobalJglobal0F{})KdefaultPessentials.rAJglobalJglobal0F{}*KdefaultSessentials.warpAJglobalJglobal0F{}+KdefaultWessentials.afk.autoAJglobalJglobal0F{},Kdefault\ezcolors.color.lightblueAJglobalJglobal0F{}-KdefaultXessentials.tpacancelAJglobalJglobal0F{}.KdefaultSessentials.homeAJglobalJglobal0F{}/KdefaultYezcolors.color.yellowAJglobalJglobal0F{}KdefaultYezcolors.color.purpleAJglobalJglobal0F{}KdefaultVessentials.tpahereAJglobalJglobal0F{}KdefaultRessentials.tpaAJglobalJglobal0F{}KdefaultXezcolors.color.resetAJglobalJglobal0F{}KdefaultWezcolors.color.goldAJglobalJglobal0F{}Kdefault[ezcolors.color.darkgrayAJglobalJglobal0F{}KdefaultWessentials.playtimeAJglobalJglobal0F{}KdefaultRessentials.msgAJglobalJglobal0F{}KdefaultXezcolors.color.greenAJglobalJglobal0F{}KdefaultWessentials.tpacceptAJglobalJglobal0F{}KdefaultSessentials.pingAJglobalJglobal0F{}KdefaultVezcolors.color.redAJglobalJglobal0F{}KdefaultWezcolors.color.cyanAJglobalJglobal0F{}KdefaultPezcolors.guiAJglobalJglobal0F{}KdefaultUessentials.tpdenyAJglobalJglobal0F{}KdefaultVessentials.sethomeAJglobalJglobal0F{} KdefaultWezcolors.color.blueAJglobalJglobal0F{}!KdefaultRessentials.kitAJglobalJglobal0F{}"KdefaultZezcolors.color.darkredAJglobalJglobal0F{}#KdefaultWezcolors.color.limeAJglobalJglobal0F{}$KdefaultVessentials.suicideAJglobalJglobal0F{}%KdefaultXezcolors.color.whiteAJglobalJglobal0F{}&KdefaultUessentials.ignoreAJglobalJglobal0F{}'KdefaultWessentials.realnameAJglobalJglobal0F{}(KdefaultXezcolors.color.blackAJglobalJglobal0F{})KdefaultWezcolors.color.grayAJglobalJglobal0F{}  æ
+% Kdefault5Kdefault7KdefaultKdefault	Kdefault
+KdefaultKdefaultKdefault
+KdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefaultKdefault Kdefault!Kdefault"Kdefault#Kdefault$Kdefault%Kdefault&Kdefault'Kdefault(Kdefault)Iowner6                                         ï? 1234 
+$a5036334-176e-4cbc-a826-df006bab9273KsnopeyyIowner
+$42295c25-98bc-4628-8f84-e9a0d8532b58PbiggiematiasKdefault
+$b0678c71-7403-4193-8650-bac3119a175aJkonraaKdefault
+$66b5edd0-49b4-4c3e-83b1-0be720a183f1JnnaikoKdefault   ²s 
+$42295c25-98bc-4628-8f84-e9a0d8532b582
+$66b5edd0-49b4-4c3e-83b1-0be720a183f14
+$a5036334-176e-4cbc-a826-df006bab92731
+$b0678c71-7403-4193-8650-bac3119a175a3        =N
+ Pbiggiematias2Jkonraa3Jnnaiko4Ksnopeyy1        ° 12 KdefaultIowner    ì Kdefault1Iowner2      ñ  @ Bš  @ 
+š    1234567	
+
+ !ÎÛ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullIowner
++webeditor add prefix.0.&8[&4&lOwner&8] true"ÖÛ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyU
+$42295c25-98bc-4628-8f84-e9a0d8532b58PbiggiematiasVparent set default#áÛ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyU
+$b0678c71-7403-4193-8650-bac3119a175aJkonraaVparent set default$êÛ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyU
+$a5036334-176e-4cbc-a826-df006bab9273KsnopeyyTparent set owner%ÙÜ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+(webeditor add prefix.0.&8[&3&lBL&8] true&ÇÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+*webeditor add prefix.0.&8[&3&lBL&8]&f true'ÇÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
++webeditor remove prefix.0.&8[&3&lBL&8] true(ÇÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullIowner
+-webeditor add prefix.0.&8[&4&lOwner&8]&f true)ÇÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullIowner
+.webeditor remove prefix.0.&8[&4&lOwner&8] true*äÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+(webeditor add prefix.0.&8[&3&lBL&8] true+äÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+-webeditor remove prefix.0.&8[&3&lBL&8]&f true,äÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullIowner
++webeditor add prefix.0.&8[&4&lOwner&8] true-äÞ«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullIowner
+0webeditor remove prefix.0.&8[&4&lOwner&8]&f true.…ß«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyU
+$a5036334-176e-4cbc-a826-df006bab9273KsnopeyyYpermission set * true/•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.aqua true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.pink true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefaultcwebeditor add essentials.r true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+"webeditor add essentials.warp true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add essentials.afk.auto true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
++webeditor add ezcolors.color.lightblue true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+'webeditor add essentials.tpacancel true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+"webeditor add essentials.home true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+(webeditor add ezcolors.color.yellow true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+(webeditor add ezcolors.color.purple true  /  !"#$%&'()*+,-./01 •ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+%webeditor add essentials.tpahere true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+!webeditor add essentials.tpa true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+'webeditor add ezcolors.color.reset true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.gold true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+*webeditor add ezcolors.color.darkgray true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add essentials.playtime true•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+!webeditor add essentials.msg true •ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+'webeditor add ezcolors.color.green true!•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add essentials.tpaccept true"•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+"webeditor add essentials.ping true#•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+%webeditor add ezcolors.color.red true$•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.cyan true%•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefaultcwebeditor add ezcolors.gui true&•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+$webeditor add essentials.tpdeny true'•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+%webeditor add essentials.sethome true(•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.blue true)•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+!webeditor add essentials.kit true*•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+)webeditor add ezcolors.color.darkred true+•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.lime true,•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+%webeditor add essentials.suicide true-•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+'webeditor add ezcolors.color.white true.•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+$webeditor add essentials.ignore true/•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add essentials.realname true0•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+'webeditor add ezcolors.color.black true1•ð«˜
+$a5036334-176e-4cbc-a826-df006bab9273KSnopeyyGHnullKdefault
+&webeditor add ezcolors.color.gray true   )?6   @ ÑÒ  @ 
+zÐ
+name.index.16  ¤=â  	chunk.bfd	chunk.c00map.1map.10map.11map.12map.1amap.3map.4map.5map.6map.7map.8map.9map.amap.bmap.cmap.dmap.emap.f
+name.index.12
+name.index.14qchunk:bfd,block:2,len:4,liveMax:0,livePages:0,map:1a,max:3ab0,pages:10,root:2ff40000cc783,time:d0e0f2,version:bfdvchunk:c00,block:7,len:1,liveMax:0,livePages:0,map:1a,max:330,next:8,pages:2,root:3000000002743,time:d0e0f3,version:c00name:openTransactions
+name:table.20
+name:table.24
+name:index.25 name:undoLog.1,createVersion:a57name:table.0name:lobMapname:lobRefname:lobDataname:table.3name:index.7name:table.8
+name:index.12
+name:table.13
+name:index.14
+name:index.16
+name:table.17
+name:index.18ac  õ8  
+name.index.16
+name.index.18
+name.index.25name.index.7name.lobDataname.lobMapname.lobRefname.openTransactionsname.table.0
+name.table.13
+name.table.17
+name.table.20
+name.table.24name.table.3name.table.8name.undoLog.1root.10root.3root.7root.8root.9root.aroot.broot.croot.droot.eroot.fdf12864513be1011791a
+3004000073b41
+300400000275c
+3004000041b4a
+3004000043fc6
+3004000045758
+3004000063ad0
+300400006b44c
+300400006f00a
+3004000071c84
+3004000072bc0
+3004000073340                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                chunk:c01,block:2,version:c01,fletcher:da7d9c57                                                                                
+chunk:c03,block:6,len:1,map:1a,max:330,next:7,pages:2,root:300c000002743,time:d0e0f4,version:c03                                                            
+   )·   À  1’  @ 
+zÐ
+name.index.16  ¡d  	chunk.c01	chunk.c02map.1map.10map.11map.12map.1amap.3map.4map.5map.6map.7map.8map.9map.amap.bmap.cmap.dmap.emap.f
+name.index.12
+name.index.14tchunk:c01,block:2,len:4,liveMax:3780,livePages:e,map:1a,max:3ab0,pages:10,root:30040000cc783,time:d0e0f3,version:c01pchunk:c02,block:10,len:1,liveMax:0,livePages:0,map:1a,max:330,pages:2,root:3008000002743,time:d0e0f4,version:c02name:openTransactions
+name:table.20
+name:table.24
+name:index.25 name:undoLog.1,createVersion:a57name:table.0name:lobMapname:lobRefname:lobDataname:table.3name:index.7name:table.8
+name:index.12
+name:table.13
+name:index.14
+name:index.16
+name:table.17
+name:index.18acE_1D5978ABAA32" START WITH 3 BELONGS_TO_TABLE% !
+ZCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("ID")& %
+‰ALTER TABLE "PUBLIC"."LUCKPERMS_USER_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_3" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_3"' !
+PCREATE INDEX "PUBLIC"."INDEX_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("UUID")(  
+òCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D",
+    "NAME" VARCHAR(36) NOT NULL,
+    "PERMISSION" VARCHAR(200) NOT NULL,
+    "VALUE" BOOL NOT NULL,
+    "SERVER" VARCHAR(36) NOT NULL,
+    "WORLD" VARCHAR(64) NOT NULL,
+    "EXPIRY" BIGINT NOT NULL,
+    "CONTEXTS" VARCHAR(200) NOT NULL
+)) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D" START WITH 42 BELONGS_TO_TABLE* !
+[CREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("ID")+ %
+ŠALTER TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_5", !
+QCREATE INDEX "PUBLIC"."INDEX_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("NAME")-  
+¢CREATE CACHED TABLE "PUBLIC"."LUCKPERMS_PLAYERS"(
+    "UUID" VARCHAR(36) NOT NULL,
+    "USERNAME" VARCHAR(16) NOT NULL,
+    "PRIMARY_GROUP" VARCHAR(36) NOT NULL
+). !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("UUID")/ %
+‚ALTER TABLE "PUBLIC"."LUCKPERMS_PLAYERS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("UUID") INDEX "PUBLIC"."PRIMARY_KEY_F" !
+KCREATE INDEX "PUBLIC"."INDEX_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("USERNAME")  
+RCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUPS"(
+    "NAME" VARCHAR(36) NOT NULL
+) !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F9" ON "PUBLIC"."LUCKPERMS_GROUPS"("NAME") %
+ƒALTER TABLE "PUBLIC"."LUCKPERMS_GROUPS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F9" PRIMARY KEY("NAME") INDEX "PUBLIC"."PRIMARY_KEY_F9"  
+õCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_ACTIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919",
+    "TIME" BIGINT NOT NULL,
+    "ACTOR_UUID" VARCHAR(36) NOT NULL,
+    "ACTOR_NAME" VARCHAR(100) NOT NULL,
+    "TYPE" CHAR(1) NOT NULL,
+    "ACTED_UUID" VARCHAR(36) NOT NULL,
+    "ACTED_NAME" VARCHAR(36) NOT NULL,
+    "ACTION" VARCHAR(300) NOT NULL
+) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919" START WITH 50 BELONGS_TO_TABLE !
+QCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_D" ON "PUBLIC"."LUCKPERMS_ACTIONS"("ID") %
+€ALTER TABLE "PUBLIC"."LUCKPERMS_ACTIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_D" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_D"  
+nCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_TRACKS"(
+    "NAME" VARCHAR(36) NOT NULL,
+    "GROUPS" TEXT NOT chunk:c03,block:6,version:c03,fletcher:e7ea457                                                                                 
+chunk:c04,block:7,len:1,map:1a,max:330,next:8,pages:2,root:3010000002743,time:d0e0f4,version:c04                                                            
+   )°     1’  @ 
+zÐ
+name.index.16  §e  	chunk.c01	chunk.c03map.1map.10map.11map.12map.1amap.3map.4map.5map.6map.7map.8map.9map.amap.bmap.cmap.dmap.emap.f
+name.index.12
+name.index.14tchunk:c01,block:2,len:4,liveMax:3780,livePages:e,map:1a,max:3ab0,pages:10,root:30040000cc783,time:d0e0f3,version:c01vchunk:c03,block:6,len:1,liveMax:0,livePages:0,map:1a,max:330,next:7,pages:2,root:300c000002743,time:d0e0f4,version:c03name:openTransactions
+name:table.20
+name:table.24
+name:index.25 name:undoLog.1,createVersion:a57name:table.0name:lobMapname:lobRefname:lobDataname:table.3name:index.7name:table.8
+name:index.12
+name:table.13
+name:index.14
+name:index.16
+name:table.17
+name:index.18ac78ABAA32" START WITH 3 BELONGS_TO_TABLE% !
+ZCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("ID")& %
+‰ALTER TABLE "PUBLIC"."LUCKPERMS_USER_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_3" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_3"' !
+PCREATE INDEX "PUBLIC"."INDEX_3" ON "PUBLIC"."LUCKPERMS_USER_PERMISSIONS"("UUID")(  
+òCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D",
+    "NAME" VARCHAR(36) NOT NULL,
+    "PERMISSION" VARCHAR(200) NOT NULL,
+    "VALUE" BOOL NOT NULL,
+    "SERVER" VARCHAR(36) NOT NULL,
+    "WORLD" VARCHAR(64) NOT NULL,
+    "EXPIRY" BIGINT NOT NULL,
+    "CONTEXTS" VARCHAR(200) NOT NULL
+)) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_60183AE9_1B17_438D_A678_C8C41D1E283D" START WITH 42 BELONGS_TO_TABLE* !
+[CREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("ID")+ %
+ŠALTER TABLE "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_5" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_5", !
+QCREATE INDEX "PUBLIC"."INDEX_5" ON "PUBLIC"."LUCKPERMS_GROUP_PERMISSIONS"("NAME")-  
+¢CREATE CACHED TABLE "PUBLIC"."LUCKPERMS_PLAYERS"(
+    "UUID" VARCHAR(36) NOT NULL,
+    "USERNAME" VARCHAR(16) NOT NULL,
+    "PRIMARY_GROUP" VARCHAR(36) NOT NULL
+). !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("UUID")/ %
+‚ALTER TABLE "PUBLIC"."LUCKPERMS_PLAYERS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F" PRIMARY KEY("UUID") INDEX "PUBLIC"."PRIMARY_KEY_F" !
+KCREATE INDEX "PUBLIC"."INDEX_F" ON "PUBLIC"."LUCKPERMS_PLAYERS"("USERNAME")  
+RCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_GROUPS"(
+    "NAME" VARCHAR(36) NOT NULL
+) !
+SCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_F9" ON "PUBLIC"."LUCKPERMS_GROUPS"("NAME") %
+ƒALTER TABLE "PUBLIC"."LUCKPERMS_GROUPS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_F9" PRIMARY KEY("NAME") INDEX "PUBLIC"."PRIMARY_KEY_F9"  
+õCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_ACTIONS"(
+    "ID" INT DEFAULT (NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919") NOT NULL NULL_TO_DEFAULT SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919",
+    "TIME" BIGINT NOT NULL,
+    "ACTOR_UUID" VARCHAR(36) NOT NULL,
+    "ACTOR_NAME" VARCHAR(100) NOT NULL,
+    "TYPE" CHAR(1) NOT NULL,
+    "ACTED_UUID" VARCHAR(36) NOT NULL,
+    "ACTED_NAME" VARCHAR(36) NOT NULL,
+    "ACTION" VARCHAR(300) NOT NULL
+) #
+nCREATE SEQUENCE "PUBLIC"."SYSTEM_SEQUENCE_4C5757BC_7E52_440E_80D3_B91CF1CD3919" START WITH 50 BELONGS_TO_TABLE !
+QCREATE PRIMARY KEY "PUBLIC"."PRIMARY_KEY_D" ON "PUBLIC"."LUCKPERMS_ACTIONS"("ID") %
+€ALTER TABLE "PUBLIC"."LUCKPERMS_ACTIONS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_D" PRIMARY KEY("ID") INDEX "PUBLIC"."PRIMARY_KEY_D"  
+nCREATE CACHED TABLE "PUBLIC"."LUCKPERMS_TRACKS"(
+    "NAME" VARCHAR(36) NOT NULL,
+    "GROUPS" TEXT NOT chunk:c04,block:7,version:c04,fletcher:217ea757                                                                                
